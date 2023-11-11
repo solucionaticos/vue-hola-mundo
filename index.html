@@ -17,7 +17,7 @@
           };
         },
         template: `
-        <img :src="urlImg" :alt="urlImg" />
+        <img v-bind="{'src':urlImg, 'alt':imurlImgg}" />
         `,
       }).mount("#app");
       console.log(vm);
