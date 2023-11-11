@@ -17,10 +17,13 @@
           };
         },
         template: `
-        <button v-on:click="increment">{{counter}}</button>
+        <form v-on:submit="submit"> 
+            <button>{{counter}}</button>
+        </form>
         `,
         methods: {
-          increment() {
+          submit(e) {
+            e.preventDefault();
             this.counter++;
           },
         },
