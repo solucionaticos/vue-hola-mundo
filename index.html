@@ -13,10 +13,10 @@
       const vm = Vue.createApp({
         data() {
           return {
-            text: "Kilo!!!",
+            text: "<h1>Kilo!!!</h1>",
           };
         },
-        template: `<div v-once v-text="text"></div>`,
+        template: `<div v-html="text"></div>`,
       }).mount("#app");
       console.log(vm);
     </script>
