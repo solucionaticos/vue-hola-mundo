@@ -13,10 +13,12 @@
       const vm = Vue.createApp({
         data() {
           return {
-            text: "<h1>Kilo!!!</h1>",
+            urlImg: "https://picsum.photos/200/300",
           };
         },
-        template: `<div v-html="text"></div>`,
+        template: `
+        <img :src="urlImg" :alt="urlImg" />
+        `,
       }).mount("#app");
       console.log(vm);
     </script>
