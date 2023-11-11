@@ -8,7 +8,7 @@
   <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <div id="app">{{text}}</div>
+    <div id="app"></div>
     <script>
       const vm = Vue.createApp({
         data() {
@@ -16,6 +16,7 @@
             text: "Kilo!!!",
           };
         },
+        template: `x:{{text}}`,
       }).mount("#app");
       console.log(vm);
     </script>
