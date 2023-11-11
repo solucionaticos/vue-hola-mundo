@@ -13,12 +13,17 @@
       const vm = Vue.createApp({
         data() {
           return {
-            urlImg: "https://picsum.photos/200/300",
+            counter: 0,
           };
         },
         template: `
-        <img v-bind="{'src':urlImg, 'alt':imurlImgg}" />
+        <button v-on:click="increment">{{counter}}</button>
         `,
+        methods: {
+          increment() {
+            this.counter++;
+          },
+        },
       }).mount("#app");
       console.log(vm);
     </script>
