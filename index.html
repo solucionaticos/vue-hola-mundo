@@ -17,13 +17,12 @@
           };
         },
         template: `
-        <form v-on:submit="submit"> 
+        <form v-on:submit.prevent="submit"> 
             <button>{{counter}}</button>
         </form>
         `,
         methods: {
-          submit(e) {
-            e.preventDefault();
+          submit() {
             this.counter++;
           },
         },
