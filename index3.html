@@ -18,14 +18,9 @@
             text: "Hi Kilo!",
           };
         },
-        methods: {
-          input(e) {
-            this.text = e.target.value;
-          },
-        },
         template: `
             <h1>{{text}}</h1>
-            <input type="text" @input="input" :value="text" >`,
+            <input type="text" v-model="text" >`,
       }).mount("#app");
     </script>
   </body>
