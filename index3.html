@@ -25,7 +25,7 @@
         },
         template: `
             <h1>{{text}}</h1>
-            <input type="text" v-on:input="input" v-bind:value="text" >`,
+            <input type="text" @input="input" :value="text" >`,
       }).mount("#app");
     </script>
   </body>
