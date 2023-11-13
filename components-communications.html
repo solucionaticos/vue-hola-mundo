@@ -14,22 +14,22 @@
       const app = createApp({
         data() {
           return {
-            items: ["uno", "dos", "tres"],
+            items: ["uno 1", "dos 2", "tres 3"],
           };
         },
         template: `
             <ul>
-                <v-item v-for="(item, i) in items" :key="i">
-                    {{ item }}
+                <v-item v-for="(item, i) in items" :key="i" v-bind:text="item">
                 </v-item>
             </ul>
         `,
       });
 
       app.component("v-item", {
+        props: ["text"],
         template: `
             <li>
-                <slot></slot>
+                {{ text }}
             </li>
         `,
       });
