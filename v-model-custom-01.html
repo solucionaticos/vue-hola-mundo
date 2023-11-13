@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app"></div>
+    <script>
+      const { createApp } = Vue;
+
+      const app = createApp({
+        data() {
+          return {
+            text: "kilo",
+          };
+        },
+        methods: {
+          update(e) {
+            this.text = e.target.value;
+          },
+        },
+        template: `
+            <div>
+                <p>{{ text }}</p>
+                <v-input v-bind:value="text" v-on:input="update" />
+            </div>
+        `,
+      });
+
+      app.component("v-input", {
+        template: `
+            <input type="text" />
+        `,
+      });
+
+      const vm = app.mount("#app");
+    </script>
+  </body>
+</html>
