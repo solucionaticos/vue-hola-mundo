@@ -14,7 +14,7 @@
       const app = createApp({
         data() {
           return {
-            items: ["uno 1", "dos 2", "tres 3"],
+            items: ["uno 1", "dos 2", "tres 3", ,],
           };
         },
         template: `
@@ -27,7 +27,9 @@
 
       app.component("v-item", {
         props: {
-          text: String,
+          text: {
+            default: "Texto vacio",
+          },
         },
         template: `
             <li>
