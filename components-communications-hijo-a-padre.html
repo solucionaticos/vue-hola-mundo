@@ -19,8 +19,6 @@
         },
         methods: {
           remove(i) {
-            console.log(i);
-
             const items = this.items.filter((el, index) => index !== i);
             this.items = items;
           },
@@ -31,7 +29,7 @@
                     v-for="(item, i) in items" 
                     :key="i" 
                     v-bind:text="item"
-                    v-on:click="remove(i)" />
+                    v-on:delete="remove(i)" />
             </ul>
         `,
       });
@@ -40,8 +38,13 @@
         props: {
           text: String,
         },
+        methods: {
+          rm() {
+            this.$emit("delete");
+          },
+        },
         template: `
-            <li>
+            <li v-on:click="rm">
                 {{ text }}
             </li>
         `,
